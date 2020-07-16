@@ -114,7 +114,7 @@ public class SyncMain {
 
         //  Create container with 400 RU/s
         CosmosContainerResponse cosmosContainerResponse =
-            database.createContainerIfNotExists(containerProperties, ThroughputProperties.createManualThroughput(400));
+            database.createContainerIfNotExists(containerProperties, ThroughputProperties.createManualThroughput(20000));
         container = database.getContainer(cosmosContainerResponse.getProperties().getId());
         //  </CreateContainerIfNotExists>
 
