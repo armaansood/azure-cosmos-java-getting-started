@@ -99,9 +99,6 @@ public class SyncMain {
 		while (true) {
 			readItems(familiesToCreate);
 		}
-
-        System.out.println("Querying items.");
-        queryItems();
     }
 
     private void createDatabaseIfNotExists() throws Exception {
