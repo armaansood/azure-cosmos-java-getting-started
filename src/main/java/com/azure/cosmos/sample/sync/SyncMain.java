@@ -96,7 +96,9 @@ public class SyncMain {
         createFamilies(familiesToCreate);
 
         System.out.println("Reading items.");
-        readItems(familiesToCreate);
+		while (true) {
+			readItems(familiesToCreate);
+		}
 
         System.out.println("Querying items.");
         queryItems();
@@ -145,15 +147,9 @@ public class SyncMain {
             //  </CreateItem>
 
             //  Get request charge and other properties like latency, and diagnostics strings, etc.
-            System.out.println(String.format("Created item with request charge of %.2f within" +
-                    " duration %s",
-                item.getRequestCharge(), item.getDuration()));
+            System.out.println(String.format("%s", item.getDuration().toMillis()));
             totalRequestCharge += item.getRequestCharge();
         }
-        System.out.println(String.format("Created %d items with total request " +
-                "charge of %.2f",
-            families.size(),
-            totalRequestCharge));
     }
 
     private void readItems(ArrayList<Family> familiesToCreate) {
